@@ -60,6 +60,7 @@ namespace MagniSnap
                 ImageToolkit.ViewImage(ImageMatrix, mainPictureBox);
 
                 graph = new PixelGraph(ImageMatrix);
+                graph.ExportGraph("graph.txt");
 
                 shortestPath = new ShortestPath(
                     ImageToolkit.GetWidth(ImageMatrix),
@@ -110,6 +111,11 @@ namespace MagniSnap
                     graph
                 );
             }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void mainPictureBox_MouseMove(object sender, MouseEventArgs e)

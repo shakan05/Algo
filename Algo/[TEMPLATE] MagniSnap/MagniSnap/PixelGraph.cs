@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace MagniSnap
 {
@@ -58,5 +59,34 @@ namespace MagniSnap
 
             return neighbors;
         }
+        public void ExportGraph(string filename)
+        {
+            using (StreamWriter sw = new StreamWriter(filename))
+            {
+                int index = 0;
+
+                for (int y = 0; y < Height; y++)
+                {
+                    for (int x = 0; x < Width; x++)
+                    {
+                        sw.WriteLine($"The index node {index}");
+                        sw.WriteLine("Edges");
+
+                        var neighbors = GetNeighbors(x, y);
+
+                        foreach (var n in neighbors)
+                        {
+                            int neighborIndex = n.ny * Width + n.nx;
+                            sw.WriteLine(
+                                $"edge from {index} To {neighborIndex} With Weights {n.weight}"
+                            );
+                        }
+
+                        index++;
+                    }
+                }
+            }
+        }
+
     }
 }

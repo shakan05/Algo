@@ -82,19 +82,17 @@
             this.panel1.Controls.Add(this.btnArrow);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 53);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(0, 83);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(87, 623);
+            this.panel1.Size = new System.Drawing.Size(130, 973);
             this.panel1.TabIndex = 0;
             // 
             // indicator_pnl
             // 
             this.indicator_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(130)))), ((int)(((byte)(246)))));
-            this.indicator_pnl.Location = new System.Drawing.Point(0, 120);
-            this.indicator_pnl.Margin = new System.Windows.Forms.Padding(2);
+            this.indicator_pnl.Location = new System.Drawing.Point(0, 188);
             this.indicator_pnl.Name = "indicator_pnl";
-            this.indicator_pnl.Size = new System.Drawing.Size(10, 64);
+            this.indicator_pnl.Size = new System.Drawing.Size(15, 100);
             this.indicator_pnl.TabIndex = 3;
             // 
             // btnLivewire
@@ -106,10 +104,9 @@
             this.btnLivewire.Font = new System.Drawing.Font("Century Gothic", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLivewire.ForeColor = System.Drawing.Color.Silver;
             this.btnLivewire.Image = ((System.Drawing.Image)(resources.GetObject("btnLivewire.Image")));
-            this.btnLivewire.Location = new System.Drawing.Point(0, 184);
-            this.btnLivewire.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLivewire.Location = new System.Drawing.Point(0, 288);
             this.btnLivewire.Name = "btnLivewire";
-            this.btnLivewire.Size = new System.Drawing.Size(87, 64);
+            this.btnLivewire.Size = new System.Drawing.Size(130, 100);
             this.btnLivewire.TabIndex = 4;
             this.btnLivewire.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLivewire.UseVisualStyleBackColor = true;
@@ -125,10 +122,9 @@
             this.btnArrow.Font = new System.Drawing.Font("Century Gothic", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArrow.ForeColor = System.Drawing.Color.Silver;
             this.btnArrow.Image = ((System.Drawing.Image)(resources.GetObject("btnArrow.Image")));
-            this.btnArrow.Location = new System.Drawing.Point(0, 120);
-            this.btnArrow.Margin = new System.Windows.Forms.Padding(2);
+            this.btnArrow.Location = new System.Drawing.Point(0, 188);
             this.btnArrow.Name = "btnArrow";
-            this.btnArrow.Size = new System.Drawing.Size(87, 64);
+            this.btnArrow.Size = new System.Drawing.Size(130, 100);
             this.btnArrow.TabIndex = 5;
             this.btnArrow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnArrow.UseVisualStyleBackColor = true;
@@ -140,20 +136,18 @@
             this.panel3.Controls.Add(this.appLogo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(17, 16, 17, 16);
-            this.panel3.Size = new System.Drawing.Size(87, 120);
+            this.panel3.Padding = new System.Windows.Forms.Padding(26, 25, 26, 25);
+            this.panel3.Size = new System.Drawing.Size(130, 188);
             this.panel3.TabIndex = 1;
             // 
             // appLogo
             // 
             this.appLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.appLogo.Image = global::intelligent_scissors.Properties.Resources.scissor_icon;
-            this.appLogo.Location = new System.Drawing.Point(17, 16);
-            this.appLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.appLogo.Location = new System.Drawing.Point(26, 25);
             this.appLogo.Name = "appLogo";
-            this.appLogo.Size = new System.Drawing.Size(53, 88);
+            this.appLogo.Size = new System.Drawing.Size(78, 138);
             this.appLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.appLogo.TabIndex = 1;
             this.appLogo.TabStop = false;
@@ -165,9 +159,8 @@
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1303, 53);
+            this.panel2.Size = new System.Drawing.Size(1954, 83);
             this.panel2.TabIndex = 1;
             // 
             // panel8
@@ -175,19 +168,17 @@
             this.panel8.Controls.Add(this.splitter1);
             this.panel8.Controls.Add(this.menuStrip1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(211, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Location = new System.Drawing.Point(316, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1092, 53);
+            this.panel8.Size = new System.Drawing.Size(1638, 83);
             this.panel8.TabIndex = 3;
             // 
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(1, 53);
+            this.splitter1.Size = new System.Drawing.Size(2, 83);
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
@@ -195,13 +186,14 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1092, 53);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1638, 83);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -217,7 +209,7 @@
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 51);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(81, 79);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
@@ -228,7 +220,7 @@
             this.openToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(337, 44);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -238,7 +230,7 @@
             this.clearToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
             this.clearToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(337, 44);
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
@@ -248,7 +240,7 @@
             this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(337, 44);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // toolStripSeparator1
@@ -257,7 +249,7 @@
             this.toolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.toolStripSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(182, 3);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(334, 3);
             // 
             // exitToolStripMenuItem
             // 
@@ -265,7 +257,7 @@
             this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(337, 44);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -275,18 +267,16 @@
             this.panel7.Controls.Add(this.label1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(211, 53);
+            this.panel7.Size = new System.Drawing.Size(316, 83);
             this.panel7.TabIndex = 2;
             // 
             // appIcon
             // 
             this.appIcon.Image = global::intelligent_scissors.Properties.Resources.scissor_icon;
-            this.appIcon.Location = new System.Drawing.Point(13, 9);
-            this.appIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.appIcon.Location = new System.Drawing.Point(20, 14);
             this.appIcon.Name = "appIcon";
-            this.appIcon.Size = new System.Drawing.Size(37, 35);
+            this.appIcon.Size = new System.Drawing.Size(56, 55);
             this.appIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.appIcon.TabIndex = 3;
             this.appIcon.TabStop = false;
@@ -296,10 +286,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(61, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(92, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 19);
+            this.label1.Size = new System.Drawing.Size(193, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "MagniSnap";
             // 
@@ -308,10 +297,9 @@
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(87, 53);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(130, 83);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1216, 623);
+            this.panel4.Size = new System.Drawing.Size(1824, 973);
             this.panel4.TabIndex = 2;
             // 
             // panel6
@@ -320,15 +308,14 @@
             this.panel6.Controls.Add(this.mainPictureBox);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1019, 623);
+            this.panel6.Size = new System.Drawing.Size(1528, 973);
             this.panel6.TabIndex = 19;
             // 
             // mainPictureBox
             // 
-            this.mainPictureBox.Location = new System.Drawing.Point(4, 6);
-            this.mainPictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mainPictureBox.Location = new System.Drawing.Point(6, 9);
+            this.mainPictureBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.mainPictureBox.Name = "mainPictureBox";
             this.mainPictureBox.Size = new System.Drawing.Size(500, 500);
             this.mainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -348,10 +335,9 @@
             this.panel5.Controls.Add(this.txtMousePosY);
             this.panel5.Controls.Add(this.txtHeight);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(1019, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Location = new System.Drawing.Point(1528, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(197, 623);
+            this.panel5.Size = new System.Drawing.Size(296, 973);
             this.panel5.TabIndex = 18;
             // 
             // label3
@@ -359,10 +345,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(70, 133);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(105, 208);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 16);
+            this.label3.Size = new System.Drawing.Size(40, 31);
             this.label3.TabIndex = 24;
             this.label3.Text = "Y:";
             // 
@@ -371,10 +357,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(23, 49);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(34, 77);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 16);
+            this.label6.Size = new System.Drawing.Size(110, 31);
             this.label6.TabIndex = 25;
             this.label6.Text = "Height:";
             // 
@@ -383,10 +369,10 @@
             this.position.AutoSize = true;
             this.position.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.position.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.position.Location = new System.Drawing.Point(69, 100);
-            this.position.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.position.Location = new System.Drawing.Point(104, 156);
+            this.position.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(21, 16);
+            this.position.Size = new System.Drawing.Size(41, 31);
             this.position.TabIndex = 22;
             this.position.Text = "X:";
             // 
@@ -395,10 +381,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(29, 16);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(44, 25);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 16);
+            this.label5.Size = new System.Drawing.Size(102, 31);
             this.label5.TabIndex = 23;
             this.label5.Text = "Width:";
             // 
@@ -408,11 +394,11 @@
             this.txtMousePosX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMousePosX.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMousePosX.ForeColor = System.Drawing.Color.White;
-            this.txtMousePosX.Location = new System.Drawing.Point(107, 98);
-            this.txtMousePosX.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMousePosX.Location = new System.Drawing.Point(160, 153);
+            this.txtMousePosX.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtMousePosX.Name = "txtMousePosX";
             this.txtMousePosX.ReadOnly = true;
-            this.txtMousePosX.Size = new System.Drawing.Size(74, 23);
+            this.txtMousePosX.Size = new System.Drawing.Size(110, 39);
             this.txtMousePosX.TabIndex = 20;
             // 
             // txtWidth
@@ -421,11 +407,11 @@
             this.txtWidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWidth.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWidth.ForeColor = System.Drawing.Color.White;
-            this.txtWidth.Location = new System.Drawing.Point(107, 13);
-            this.txtWidth.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWidth.Location = new System.Drawing.Point(160, 20);
+            this.txtWidth.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.ReadOnly = true;
-            this.txtWidth.Size = new System.Drawing.Size(74, 23);
+            this.txtWidth.Size = new System.Drawing.Size(110, 39);
             this.txtWidth.TabIndex = 21;
             // 
             // txtMousePosY
@@ -434,11 +420,11 @@
             this.txtMousePosY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMousePosY.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMousePosY.ForeColor = System.Drawing.Color.White;
-            this.txtMousePosY.Location = new System.Drawing.Point(107, 131);
-            this.txtMousePosY.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMousePosY.Location = new System.Drawing.Point(160, 205);
+            this.txtMousePosY.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtMousePosY.Name = "txtMousePosY";
             this.txtMousePosY.ReadOnly = true;
-            this.txtMousePosY.Size = new System.Drawing.Size(74, 23);
+            this.txtMousePosY.Size = new System.Drawing.Size(110, 39);
             this.txtMousePosY.TabIndex = 18;
             // 
             // txtHeight
@@ -447,27 +433,27 @@
             this.txtHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHeight.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHeight.ForeColor = System.Drawing.Color.White;
-            this.txtHeight.Location = new System.Drawing.Point(107, 46);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHeight.Location = new System.Drawing.Point(160, 72);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.ReadOnly = true;
-            this.txtHeight.Size = new System.Drawing.Size(74, 23);
+            this.txtHeight.Size = new System.Drawing.Size(110, 39);
             this.txtHeight.TabIndex = 19;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(1303, 676);
+            this.ClientSize = new System.Drawing.Size(1954, 1056);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.appLogo)).EndInit();
