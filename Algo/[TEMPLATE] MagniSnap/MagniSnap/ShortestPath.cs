@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MagniSnap;
+using System;
 using System.Collections.Generic;
 
 public class ShortestPath
@@ -19,7 +20,9 @@ public class ShortestPath
     }
     public ((int x, int y)[,] parent, double[,] dist) Dijkstra(
         (int x, int y) anchor,
-        Func<(int x, int y), (int x, int y), double> weight)
+        (int x, int y) destination,
+        PixelGraph graph)
+
     {
         for (int i = 0; i < width; i++)
             for (int j = 0; j < height; j++)
@@ -50,26 +53,20 @@ public class ShortestPath
 
             int ux = current.x;
             int uy = current.y;
+            if (ux == destination.x && uy == destination.y)
+                break;
+
             if (current.dist > dist[ux, uy])
                 continue;
 
-            for (int k = 0; k < 4; k++)
+            foreach (var n in graph.GetNeighbors(ux, uy))
             {
-                int nx = ux + dx[k];
-                int ny = uy + dy[k];
+                int nx = n.nx;
+                int ny = n.ny;
+                double w = n.weight;
 
-                if (nx < 0 || ny < 0 || nx >= width || ny >= height)
-                    continue;
-
-                double w = weight((ux, uy), (nx, ny));
                 double newDist = dist[ux, uy] + w;
 
-                if (newDist < dist[nx, ny])
-                {
-                    dist[nx, ny] = newDist;
-                    parent[nx, ny] = (ux, uy);
-                    pq.Add((dist: newDist, x: nx, y: ny));
-                }
             }
         }
 

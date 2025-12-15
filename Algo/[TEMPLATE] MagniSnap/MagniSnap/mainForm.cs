@@ -9,9 +9,15 @@ namespace MagniSnap
     #endregion
     public partial class MainForm : Form
     {
+
         RGBPixel[,] ImageMatrix;
         bool isLassoEnabled = false;
-        PixelGraph graph;   
+        PixelGraph graph;
+        ShortestPath shortestPath;
+        (int x, int y)[,] parent;
+        double[,] dist;
+        int anchorX, anchorY;
+        bool hasAnchor = false;
 
         public MainForm()
         {
@@ -44,24 +50,24 @@ namespace MagniSnap
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            #region Do Change Remove Template Code
-            /// 4d17639adfad0a300acd78759e07a4f2
-            #endregion
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                //Open the browsed image and display it
                 string OpenedFilePath = openFileDialog1.FileName;
+
                 ImageMatrix = ImageToolkit.OpenImage(OpenedFilePath);
                 ImageToolkit.ViewImage(ImageMatrix, mainPictureBox);
+
                 graph = new PixelGraph(ImageMatrix);
 
+                shortestPath = new ShortestPath(
+                    ImageToolkit.GetWidth(ImageMatrix),
+                    ImageToolkit.GetHeight(ImageMatrix)
+                );
 
-                int width = ImageToolkit.GetWidth(ImageMatrix);
-                txtWidth.Text = width.ToString();
-                int height = ImageToolkit.GetHeight(ImageMatrix);
-                txtHeight.Text = height.ToString();
+                txtWidth.Text = ImageToolkit.GetWidth(ImageMatrix).ToString();
+                txtHeight.Text = ImageToolkit.GetHeight(ImageMatrix).ToString();
             }
         }
 
@@ -89,14 +95,20 @@ namespace MagniSnap
 
         private void mainPictureBox_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left &&
+       isLassoEnabled &&
+       ImageMatrix != null)
             {
-                if (ImageMatrix != null && isLassoEnabled)
-                {
+                anchorX = e.X;
+                anchorY = e.Y;
+                hasAnchor = true;
 
-                    // Refresh to redraw points
-                    mainPictureBox.Refresh();
-                }
+                // 🔥 THIS IS THE CALL YOU WERE ASKING ABOUT
+                (parent, dist) = shortestPath.Dijkstra(
+                    (anchorX, anchorY),
+                    (e.X, e.Y),   // destination (can be same initially)
+                    graph
+                );
             }
         }
 
