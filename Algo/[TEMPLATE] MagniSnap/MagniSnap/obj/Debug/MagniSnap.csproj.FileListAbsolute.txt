@@ -31,3 +31,14 @@ C:\Users\moham\Source\Repos\Algo\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\M
 C:\Users\moham\Source\Repos\Algo\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.csproj.CoreCompileInputs.cache
 C:\Users\moham\Source\Repos\Algo\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.exe
 C:\Users\moham\Source\Repos\Algo\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.pdb
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.csproj.AssemblyReference.cache
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.exe.config
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.MainForm.resources
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\intelligent_scissors.Properties.Resources.resources
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.csproj.GenerateResource.cache
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.csproj.CoreCompileInputs.cache
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.exe
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\obj\Debug\MagniSnap.pdb
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\bin\Debug\MagniSnap.exe.config
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\bin\Debug\MagniSnap.exe
+C:\Users\moham\Source\Repos\Al\Algo\[TEMPLATE] MagniSnap\MagniSnap\bin\Debug\MagniSnap.pdb
