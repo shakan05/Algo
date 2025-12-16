@@ -28,22 +28,23 @@ namespace MagniSnap
             InitializeComponent();
             indicator_pnl.Hide();
             mainPictureBox.Paint += mainPictureBox_Paint;
+         
         }
 
         private void MainForm_Load(object sender, EventArgs e) { }
 
         private async void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            const int MaxDim = 1600;
             using (var dlg = new OpenFileDialog()) if (dlg.ShowDialog() == DialogResult.OK)
             {
                 buildCts?.Cancel(); buildCts = new CancellationTokenSource(); var token = buildCts.Token;
                 var loaded = ImageToolkit.OpenImage(dlg.FileName);
                 if (loaded == null) { MessageBox.Show("Failed to open image."); return; }
-                var w = ImageToolkit.GetWidth(loaded); var h = ImageToolkit.GetHeight(loaded);
-                ImageMatrix = (Math.Max(w, h) > MaxDim) ? DownscaleImageMatrix(loaded, MaxDim) : loaded;
+                // always keep the loaded image matrix (no programmatic downscale)
+                ImageMatrix = loaded;
                 ImageToolkit.ViewImage(ImageMatrix, mainPictureBox);
-                mainPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+
+                // do not force any visual scaling here (leave __SizeMode__ as Normal)
                 txtWidth.Text = ImageToolkit.GetWidth(ImageMatrix).ToString();
                 txtHeight.Text = ImageToolkit.GetHeight(ImageMatrix).ToString();
                 anchors.Clear(); committedPath.Clear(); previewPath.Clear(); isLassoEnabled = false; mainPictureBox.Invalidate();
@@ -103,9 +104,9 @@ namespace MagniSnap
         private void mainPictureBox_Paint(object sender, PaintEventArgs e)
         {
             if (mainPictureBox.Image == null) return; var g = e.Graphics;
-            if (committedPath.Count > 1) using (var pen = new Pen(Color.Magenta, 2)) DrawListPath(g, committedPath, pen);
-            if (previewPath.Count > 1) using (var pen = new Pen(Color.Purple, 2) { DashStyle = System.Drawing.Drawing2D.DashStyle.Dash }) DrawListPath(g, previewPath, pen);
-            using (var b = new SolidBrush(Color.Blue)) using (var p = new Pen(Color.White, 1)) using (var f = new Font("Segoe UI", 8))
+            if (committedPath.Count > 1) using (var pen = new Pen(Color.LimeGreen, 3)) DrawListPath(g, committedPath, pen);
+            if (previewPath.Count > 1) using (var pen = new Pen(Color.LimeGreen, 3) { DashStyle = System.Drawing.Drawing2D.DashStyle.Dash }) DrawListPath(g, previewPath, pen);
+            using (var b = new SolidBrush(Color.LimeGreen)) using (var p = new Pen(Color.White, 1)) using (var f = new Font("Segoe UI", 8))
                 for (int i = 0; i < anchors.Count; i++) { var c = ImageToControl(anchors[i]); if (c.X < 0 || c.Y < 0) continue; var r = new Rectangle(c.X - 4, c.Y - 4, 8, 8); g.FillEllipse(b, r); g.DrawEllipse(p, r); g.DrawString((i + 1).ToString(), f, Brushes.White, c.X + 6, c.Y - 6); }
         }
 
@@ -133,47 +134,20 @@ namespace MagniSnap
         private (int W, int H) ImageSize => ImageMatrix != null ? (ImageToolkit.GetWidth(ImageMatrix), ImageToolkit.GetHeight(ImageMatrix)) : (mainPictureBox.Image?.Width ?? 0, mainPictureBox.Image?.Height ?? 0);
         bool ValidImagePoint(Point p) { var (W, H) = ImageSize; return p.X >= 0 && p.Y >= 0 && p.X < W && p.Y < H; }
 
+        // Simplified: assume PictureBox in Normal mode (no scaling), control coords == image pixels
         private Point ControlToImage(Point ctl)
         {
-            var (w, h) = ImageSize; int cw = mainPictureBox.ClientSize.Width, ch = mainPictureBox.ClientSize.Height;
-            if (w == 0 || h == 0 || cw == 0 || ch == 0) return new Point(-1, -1);
-            switch (mainPictureBox.SizeMode)
-            {
-                case PictureBoxSizeMode.StretchImage: return new Point(Clamp((int)(ctl.X * (w / (double)cw)), 0, w - 1), Clamp((int)(ctl.Y * (h / (double)ch)), 0, h - 1));
-                case PictureBoxSizeMode.Zoom:
-                    double ir = (double)w / h, cr = (double)cw / ch; int dw = cr < ir ? cw : (int)(ch * ir), dh = cr < ir ? (int)(cw / ir) : ch; int ox = (cw - dw) / 2, oy = (ch - dh) / 2;
-                    if (ctl.X < ox || ctl.X > ox + dw - 1 || ctl.Y < oy || ctl.Y > oy + dh - 1) return new Point(-1, -1);
-                    return new Point(Clamp((int)((ctl.X - ox) * (w / (double)dw)), 0, w - 1), Clamp((int)((ctl.Y - oy) * (h / (double)dh)), 0, h - 1));
-                case PictureBoxSizeMode.CenterImage:
-                    int cx = ctl.X - (cw - w) / 2, cy = ctl.Y - (ch - h) / 2; return ValidImagePoint(new Point(cx, cy)) ? new Point(cx, cy) : new Point(-1, -1);
-                default: return new Point(Clamp(ctl.X, 0, w - 1), Clamp(ctl.Y, 0, h - 1));
-            }
+            var (w, h) = ImageSize;
+            if (w == 0 || h == 0) return new Point(-1, -1);
+            if (ctl.X < 0 || ctl.Y < 0 || ctl.X >= w || ctl.Y >= h) return new Point(-1, -1);
+            return new Point(ctl.X, ctl.Y);
         }
 
         private Point ImageToControl(Point imgPt)
         {
-            var (w, h) = ImageSize; int cw = mainPictureBox.ClientSize.Width, ch = mainPictureBox.ClientSize.Height;
+            var (w, h) = ImageSize;
             if (w == 0 || h == 0) return imgPt;
-            switch (mainPictureBox.SizeMode)
-            {
-                case PictureBoxSizeMode.StretchImage: return new Point((int)(imgPt.X * (cw / (double)w)), (int)(imgPt.Y * (ch / (double)h)));
-                case PictureBoxSizeMode.Zoom:
-                    double ir = (double)w / h, cr = (double)cw / ch; int dw = cr < ir ? cw : (int)(ch * ir), dh = cr < ir ? (int)(cw / ir) : ch; int ox = (cw - dw) / 2, oy = (ch - dh) / 2;
-                    return new Point((int)(imgPt.X * (dw / (double)w) + ox), (int)(imgPt.Y * (dh / (double)h) + oy));
-                case PictureBoxSizeMode.CenterImage: return new Point(imgPt.X + (cw - w) / 2, imgPt.Y + (ch - h) / 2);
-                default: return imgPt;
-            }
-        }
-
-        private RGBPixel[,] DownscaleImageMatrix(RGBPixel[,] src, int maxDim)
-        {
-            int srcW = src.GetLength(0), srcH = src.GetLength(1);
-            if (Math.Max(srcW, srcH) <= maxDim) return src;
-            double scale = maxDim / (double)Math.Max(srcW, srcH);
-            int tw = Math.Max(1, (int)Math.Round(srcW * scale)), th = Math.Max(1, (int)Math.Round(srcH * scale));
-            var dst = new RGBPixel[tw, th];
-            for (int y = 0; y < th; y++) { int sy = Math.Min(srcH - 1, Math.Max(0, (int)Math.Floor(y / scale))); for (int x = 0; x < tw; x++) { int sx = Math.Min(srcW - 1, Math.Max(0, (int)Math.Floor(x / scale))); dst[x, y] = src[sx, sy]; } }
-            return dst;
+            return imgPt;
         }
 
         static int Clamp(int v, int lo, int hi) => v < lo ? lo : (v > hi ? hi : v);
